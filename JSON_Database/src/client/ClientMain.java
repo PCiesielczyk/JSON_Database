@@ -51,9 +51,13 @@ public class ClientMain {
             System.out.println("Sent: " + jsonOutput);
 
             output.writeUTF(jsonOutput); // sending message to the server
-            String receivedMsg = input.readUTF(); // response message
 
-            System.out.println("Received: " + receivedMsg);
+            try {
+                String receivedMsg = input.readUTF(); // response message
+                System.out.println("Received: " + receivedMsg);
+            } catch (EOFException eofException) {
+                System.out.println("None or invalid CLI arguments");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

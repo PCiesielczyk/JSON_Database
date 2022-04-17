@@ -1,1 +1,1 @@
-{"database":{"text":"Some text here"},"response":{"response":"ERROR","reason":"No such key"}}
+{"database":{"1":"HelloWorld!"},"response":{"response":"OK","value":"HelloWorld!"}}

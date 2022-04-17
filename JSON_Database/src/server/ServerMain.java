@@ -12,15 +12,14 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class Main {
+public class ServerMain {
     private static final int PORT = 34522;
+    private static final String PATH = System.getProperty("user.dir") + "/JSON_Database/src/server/data/db.json";
 
     public static void main(String[] args) {
 
         Map<String, String> database = new HashMap<>();
         DatabaseManagement databaseManagement = new DatabaseManagement(database);
-
-        String path = System.getProperty("user.dir") + "/src/server/data/db.json";
 
         ExecutorService executor = Executors.newScheduledThreadPool(4);
         ReadWriteLock lock = new ReentrantReadWriteLock();
@@ -75,7 +74,7 @@ public class Main {
                         }
 
                         writeLock.lock();
-                        File file = new File(path);
+                        File file = new File(PATH);
                         try (Writer writer = new FileWriter(file)) {
                             gson.toJson(databaseManagement, writer);
                         } catch (IOException e) {

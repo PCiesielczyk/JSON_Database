@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import com.google.gson.Gson;
 
-public class Main {
+public class ClientMain {
     private static final String SERVER_ADDRESS = "127.0.0.1";
     private static final int SERVER_PORT = 34522;
 
@@ -23,7 +23,7 @@ public class Main {
 
         if (arguments.getPath() != null) {
 
-            String path = System.getProperty("user.dir") + "/src/client/data/" + arguments.getPath();
+            String path = System.getProperty("user.dir") + "/JSON_Database/src/client/data/" + arguments.getPath();
             File file = new File(path);
             BufferedReader brTest = new BufferedReader(new FileReader(file));
             ArgumentsFromFile argumentsFromFile = gson.fromJson(brTest, ArgumentsFromFile.class);

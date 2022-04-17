@@ -8,7 +8,7 @@ Arguments are type, key, value type of request:
 - type: -t is the type of the request, valid values are: "set", "get" and "delete"
 - key: -k is the position of value we want to set or retrieve, valid values are any positive integer number
 - value: -v is the value to save in the database: you only need it in case of a set request, valid value is any string
-Arguments might be passed through json file by -in <file name> command.
+Arguments might be passed through json file by -in <<file name>> command.
 Examples of valid inputs are shown below.
  
 ![get_without_key_in](https://github.com/PCiesielczyk/JSON_Database/blob/main/JSON_Database/examples/ss_1_1.jpg)
